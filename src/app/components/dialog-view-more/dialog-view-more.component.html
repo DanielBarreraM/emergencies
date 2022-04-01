@@ -1,0 +1,20 @@
+<form [formGroup]="contactForm" class="center">
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label for="address">Address</mat-label>
+      <input matInput placeholder="Placeholder" id="address" formControlName="address" #address>
+      <mat-hint>Address</mat-hint>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="standard">
+      <mat-label for="date">Date</mat-label>
+      <input matInput placeholder="Placeholder" id="date" formControlName="date" #date>
+      <mat-hint>Date</mat-hint>
+    </mat-form-field>
+  </p>
+  <div class="centerButton">
+    <button type="button" (click)="save()" [disabled]="this.contactForm.invalid" mat-button>Save</button>
+    <button type="button" (click)="close()"  mat-button>Cancel</button>
+  </div>
+</form>

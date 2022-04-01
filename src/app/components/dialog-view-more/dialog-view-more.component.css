@@ -1,0 +1,14 @@
+.center{
+  display: flex;
+  flex-direction: column;
+}
+
+input, label{
+  margin-top: 1rem;
+}
+
+.centerButton{
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}

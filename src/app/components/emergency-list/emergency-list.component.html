@@ -1,0 +1,26 @@
+<div *ngIf="!loading; else loaading" class="main">
+    <div *ngFor="let emergency of emergenciesMap" class="colum">
+        <div class="card">
+            <img mat-card-image [src]="emergency.img">
+            <h1 class="title">T7K_PLUS</h1>
+            <div class="p-1">
+              <div>
+                <mat-icon>room</mat-icon>
+                <span class="info">Address:</span>
+              </div>
+              <p>{{emergency.adress}}</p>
+              <div>
+                <mat-icon>av_timer</mat-icon>
+                <span class="info">Date: </span>
+              </div>
+              <p>{{emergency.date}}</p>
+            </div>
+            <mat-divider></mat-divider>
+            <button (click)="onDelete.emit(emergency)" mat-button color=warn>Delete</button>
+            <button (click)="onViewmore.emit(emergency)" mat-button>View more</button>
+        </div>
+    </div>
+    <app-empty *ngIf="emergenciesMap.length<=0"></app-empty>
+</div>
+
+<ng-template #loaading><app-loading></app-loading></ng-template>
